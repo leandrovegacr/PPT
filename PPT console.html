@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100%, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let options = ["rock", "paper", "scissors"];
+
+        let compSelection = computerPlay();
+        let playSelection = prompt("What do you choose?").toLowerCase();
+        
+        game(function(){playRound(compSelection, playSelection) });
+
+
+        function computerPlay() {
+            return options[Math.floor(Math.random() * options.length)];
+        }
+
+        function playRound(comp, play) {
+            let win;
+            if (comp != play){
+                if (comp == "rock"){
+                    win = (play=="paper")?"computer":"player";
+                }
+                else if (comp == "paper"){
+                    win = (play=="rock")?"computer":"player";
+                }
+                else if (comp == "scissors"){
+                    win = (play == "paper")?"computer":"player";
+                }
+            }
+            else{
+                win = "It's a tie!";
+            }
+            alert(win);  
+        }
+
+        function game(func){
+            for (let i =0; i<=5; i++) {
+                func();                
+            }
+        }
+
+    </script>
+</body>
+</html>
