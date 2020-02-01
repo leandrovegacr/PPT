@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100%, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Piedra, Papel, Tijera con dibujitos</title>
+</head>
+<body>
+    <div class="titulo">
+        Piedra, Papel, Tijera
+    </div>
+    <div class="contenedor">
+        <div class="opciones">
+            <div class="opcion" data-opciones="piedra">
+                <img src="rock.png" alt="rock sign" data-opciones="piedra">
+            </div>
+            <div class="opcion" data-opciones="papel">
+                <img src="paper.png" alt="paper sign" data-opciones="papel">
+            </div>
+            <div class="opcion" data-opciones="tijera">
+                <img src="scissors.png" alt="scissors sign" data-opciones="tijera">
+            </div>
+        </div>
+        <div class="computadora">
+            <div class="opcion">
+
+            </div>
+        </div>
+        <div class="cont-marcador">
+            <div class="marcador">
+                Marcador:
+            </div>
+            <div class="marcador-comp"></div>
+            <div class="marcador-jug"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const options = ["rock", "paper", "scissors"];
+    const opciones = document.querySelector(".opciones");
+
+    opciones.addEventListener("click", function (e) {
+        console.log(e);
+    })
+    
+    // game(function(){playRound(compSelection, playSelection) });
+
+    // function game(func){
+    //     for (let i =0; i<=5; i++) {
+    //         func();                
+    //     }
+    // }
+
+    // function computerPlay() {
+    //     return options[Math.floor(Math.random() * options.length)];
+    // }
+
+    // function playRound(comp, play) {
+    //     let win;
+    //     if (comp != play){
+    //         if (comp == "rock"){
+    //             win = (play=="paper")?"computer":"player";
+    //         }
+    //         else if (comp == "paper"){
+    //             win = (play=="rock")?"computer":"player";
+    //         }
+    //         else if (comp == "scissors"){
+    //             win = (play == "paper")?"computer":"player";
+    //         }
+    //     }
+    //     else{
+    //         win = "It's a tie!";
+    //     }
+    //     alert(win);  
+    // }
+
+</script>
+</html>
