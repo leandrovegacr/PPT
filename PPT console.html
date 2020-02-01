@@ -6,44 +6,72 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        let options = ["rock", "paper", "scissors"];
+    <div class="titulo">
+        Piedra, Papel, Tijera
+    </div>
+    <div class="contenedor">
+        <div class="opciones">
+            <div class="opcion" data-opciones="piedra">
 
-        let compSelection = computerPlay();
-        let playSelection = prompt("What do you choose?").toLowerCase();
-        
-        game(function(){playRound(compSelection, playSelection) });
+            </div>
+            <div class="opcion" data-opciones="papel">
+                
+            </div>
+            <div class="opcion" data-opciones="tijera">
+                
+            </div>
+        </div>
+        <div class="computadora">
+            <div class="opcion">
 
-
-        function computerPlay() {
-            return options[Math.floor(Math.random() * options.length)];
-        }
-
-        function playRound(comp, play) {
-            let win;
-            if (comp != play){
-                if (comp == "rock"){
-                    win = (play=="paper")?"computer":"player";
-                }
-                else if (comp == "paper"){
-                    win = (play=="rock")?"computer":"player";
-                }
-                else if (comp == "scissors"){
-                    win = (play == "paper")?"computer":"player";
-                }
-            }
-            else{
-                win = "It's a tie!";
-            }
-            alert(win);  
-        }
-
-        function game(func){
-            for (let i =0; i<=5; i++) {
-                func();                
-            }
-        }
-
-    </script>
+            </div>
+        </div>
+        <div class="cont-marcador">
+            <div class="marcador">
+                Marcador:
+            </div>
+            <div class="marcador-comp"></div>
+            <div class="marcador-jug"></div>
+        </div>
+    </div>
 </body>
+
+<script>
+    let options = ["rock", "paper", "scissors"];
+
+    let compSelection = computerPlay();
+    let playSelection = prompt("What do you choose?").toLowerCase();
+    
+    game(function(){playRound(compSelection, playSelection) });
+
+    function game(func){
+        for (let i =0; i<=5; i++) {
+            func();                
+        }
+    }
+
+    function computerPlay() {
+        return options[Math.floor(Math.random() * options.length)];
+    }
+
+    function playRound(comp, play) {
+        let win;
+        if (comp != play){
+            if (comp == "rock"){
+                win = (play=="paper")?"computer":"player";
+            }
+            else if (comp == "paper"){
+                win = (play=="rock")?"computer":"player";
+            }
+            else if (comp == "scissors"){
+                win = (play == "paper")?"computer":"player";
+            }
+        }
+        else{
+            win = "It's a tie!";
+        }
+        alert(win);  
+    }
+
+</script>
 </html>
